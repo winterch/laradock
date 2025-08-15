@@ -980,7 +980,7 @@ ARG INSTALL_ADDITIONAL_LOCALES=false
 ARG ADDITIONAL_LOCALES
 
 RUN if [ ${INSTALL_ADDITIONAL_LOCALES} = true ]; then \
-    apt-get install -yqq locales \
+    apt-get install -yqq locales locales-all \
     && echo '' >> /usr/share/locale/locale.alias \
     && temp="${ADDITIONAL_LOCALES%\"}" \
     && temp="${temp#\"}" \
